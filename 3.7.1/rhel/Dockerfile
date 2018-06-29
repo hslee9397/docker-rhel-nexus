@@ -43,7 +43,7 @@ COPY help.1 uid_entrypoint /
 COPY licenses /licenses
 
 # Install Runtime Environment
-RUN set -x && \
+#RUN set -x && \
     yum clean all && \
     REPOLIST=rhel-7-server-rpms,rhel-7-server-optional-rpms,rhel-7-server-thirdparty-oracle-java-rpms \
     INSTALL_PKGS="tar java-1.8.0-oracle-devel" && \
