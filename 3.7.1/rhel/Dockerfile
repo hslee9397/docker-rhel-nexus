@@ -45,6 +45,8 @@ COPY licenses /licenses
 # Install Runtime Environment
 RUN set -x && \
     yum clean all && \
+    subscription-manager register --username=hylee1@redhat.com --password=Redhat93! --force \
+    subscription-manager attach --pool=8a85f98260c27fc50160c328c08a5045 \
     REPOLIST=rhel-7-server-rpms,rhel-7-server-optional-rpms,rhel-7-server-thirdparty-oracle-java-rpms \
     INSTALL_PKGS="tar java-1.8.0-oracle-devel" && \
     yum -y update-minimal --disablerepo "*" --enablerepo ${REPOLIST} --setopt=tsflags=nodocs \
